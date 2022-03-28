@@ -1,6 +1,6 @@
 package day29_staticKeyword;
 
-public class C92_StaticKeyword {
+public class C02_StaticKeyword {
     public static void main(String[] args) {
         // baska class'daki static class uyelerine
         // ulasabilmek icin sadece classIsmi.staticUyeIsmi
