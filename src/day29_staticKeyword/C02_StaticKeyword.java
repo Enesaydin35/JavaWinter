@@ -3,7 +3,7 @@ package day29_staticKeyword;
 public class C02_StaticKeyword {
     public static void main(String[] args) {
         // baska class'daki static class uyelerine
-        // ulasabilmek icin sadece classIsmi.staticUyeIsmi
+        // ulasabilmek icin sadece classIsmi.staticUyeIsmi(method, variable vs)
         // yazmamiz yeterlidir.
 
         System.out.println(C01_Static.okulTelefonu); // 312355698745
