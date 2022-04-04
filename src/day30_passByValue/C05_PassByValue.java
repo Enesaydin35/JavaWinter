@@ -2,6 +2,7 @@ package day30_passByValue;
 
 
 public class C05_PassByValue {
+
     // Kalici indirim icin ikinci yontem
 
     public static void main(String[] args) {

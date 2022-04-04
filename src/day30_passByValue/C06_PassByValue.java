@@ -7,7 +7,7 @@ public class C06_PassByValue {
     public static void main(String[] args) {
         /* non primitive data turlerinde  objenin kendisi degil de
            icindeki elementler degisirse
-           Java objenin referansi ve objenoin KENDISI degismedigi icin
+           Java objenin referansi ve objenin KENDISI degismedigi icin
            element degisikliklerini kabul eder ve kalici yapar
          */
 

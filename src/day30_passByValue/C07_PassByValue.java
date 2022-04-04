@@ -7,9 +7,9 @@ public class C07_PassByValue {
     public static void main(String[] args) {
 
         int arr[]={1,2,3};
-        System.out.println(Arrays.toString(arr));
-        arrDegistir(arr);
-        System.out.println("method call sonrasi : " + Arrays.toString(arr));
+        System.out.println(Arrays.toString(arr)); // [1, 2, 3]
+        arrDegistir(arr); // [0, 0, 0, 0, 0]
+        System.out.println("method call sonrasi : " + Arrays.toString(arr)); // [1, 2, 3]
     }
 
     private static void arrDegistir(int[] arr) {

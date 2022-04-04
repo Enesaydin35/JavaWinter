@@ -3,7 +3,7 @@ package day30_passByValue;
 public class C02_StaticBlocks {
     {
         /*
-        static olmayan bloklar ise obje olusturulurken calisir
+        static olmayan bloklar ise obje olusturulurken calisir,
         static bloklar sadece 1 kere en basta calisir ama
         static olmayan bloklar her obje olusturulurken yeniden calisir
          */

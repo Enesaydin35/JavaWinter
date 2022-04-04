@@ -1,6 +1,7 @@
 package day33_varargs_stringBuilder;
 
 public class C03_StringBuilder {
+
     public static void main(String[] args) {
 
         StringBuilder sb1= new StringBuilder();

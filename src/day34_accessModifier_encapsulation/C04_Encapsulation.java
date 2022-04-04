@@ -3,6 +3,7 @@ package day34_accessModifier_encapsulation;
 public class C04_Encapsulation {
 
     public static void main(String[] args) {
+
         /* Bir variable'i encapsule etmek icin
             1- Access modifier'i private yapariz
             2- okuma ve yazma ozelliklerinin kullanilmasini istedigimiz gibi sinirlayabiliriz

@@ -21,6 +21,7 @@ public class C02_StaticKeyword {
         System.out.println(obj2.okulIsmi); // Yildiz Koleji
         obj2.okulIsmi = "Sabir Koleji";
         System.out.println(obj1.okulIsmi); // Yildiz Koleji
+        System.out.println(obj2.okulIsmi); // Sabir Koleji
 
     }
 }

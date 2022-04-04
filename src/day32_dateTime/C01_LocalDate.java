@@ -9,8 +9,8 @@ public class C01_LocalDate {
 
         LocalDate trh = LocalDate.now();// objenin olusturuldugu tarihi trh'ye assign eder
         LocalDate baskaTrh = LocalDate.of(1972,1,18);
-
         //istedigimiz yil,ay ve gun degerlerine gore bize obje olusturur
+
 
         System.out.println(trh); // 2022-03-31
         // get'li method'larla tarih ile ilgili detay bilgileri alabiliriz

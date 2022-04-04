@@ -2,6 +2,7 @@ package day33_varargs_stringBuilder;
 
 public class C02_Varargs {
     public static void main(String[] args) {
+
         // parametre olarak bir int
         // ve istedigimiz kadar String alan
         // en uzun kelimenin harf sayisi ile int parametre degerini

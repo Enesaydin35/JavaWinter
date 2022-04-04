@@ -1,6 +1,7 @@
 package day33_varargs_stringBuilder;
 
 public class C04_StringBuilder {
+
     public static void main(String[] args) {
 
         StringBuilder sb1= new StringBuilder("Yasasin Java");
@@ -18,9 +19,10 @@ public class C04_StringBuilder {
 
         System.out.println(sb1); // Ne guzel Java
 
-        System.out.println(sb1.delete(0,3)); // guzelJava
+        System.out.println(sb1.delete(0,3)); // guzel Java
 
         System.out.println(sb1.deleteCharAt(5)); // guzelJava
+
 
 
 

@@ -7,6 +7,7 @@ public class C03 {
     private String str;
 
     public int getSayi() {
+
         return sayi;
     }
 
@@ -16,6 +17,7 @@ public class C03 {
     }
 
     public void setStr(String str) {
+
         this.str = str;
     }
 
@@ -23,6 +25,6 @@ public class C03 {
     public String toString() {
         return
                 "sayi=" + sayi +
-                ", str=" + str ;
+                        ", str=" + str;
     }
 }
