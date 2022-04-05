@@ -1,0 +1,16 @@
+*intellij i git hub a bağlama
+
+1===>git init
+2===>git status
+3===>git add .
+4===>git commit -m "mesajımız"
+5===>git remote add origin [repository'nin linkini kopylayıp yapıştır]
+6===>git push -u origin main (hata olursa main'i master yapalım)
+
+
+
+*İntellij terminalden değişiklikleri githuba yollama
+
+1===>git add .
+2===>git commit -m "mesajımız"
+3===>git push

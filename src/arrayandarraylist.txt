@@ -1,0 +1,358 @@
+ARRAY ve ARRAY LİST
+
+İnt arr[ ]={10,11,12} şeklinde yazılır.   //  int [ ]arr={10,11,12} şeklinde de olur.
+
+
+*Array i yazdırma:
+
+System.out.println(Arrays.toString(arr));  //[10,11,12]
+
+
+
+*Yeni Array oluşturma:
+
+String takim[] = new String[3];  //3 elemanlı şimdilik boş bir array.. [null, null, null]
+
+takim[0]=”Ali”; yazarak array e eleman atarız
+
+takim[0]=”Osman”; yazarak elemanı değiştirebiliriz ( update)
+
+
+
+*Array in uzunluğunu bulma:
+
+System.out.println(takim.length); // 3 yazdırır
+
+
+
+*Array i küçükten büyüğe sıralama:
+
+Arrays.sort(arr);
+
+System.out.println(Arrays.toString(arr));//array in içinde stringler varsa alfabetik sıralar.
+
+
+
+* Array'de primitive datalar veya non-primitive datalarin referanslari store edilebilir
+ Mesela isimler array'inin icinde isim degerleri degil, isimlerin referanslari olur
+
+System.out.println(takim); // referansi yazdirir
+System.out.println(Arrays.toString(takim)); // [Osman, null,null]
+
+
+
+
+*Aradığımız bir elemanı bulma:
+
+int arr[]= {10,25,3,16,75};
+
+Arrays.sort(arr); // ilk once siralama yapmaliyiz [3,10,16,25,75]
+
+System.out.println(Arrays.binarySearch(arr, 25)); // sonuc olarak aranan
+sayinin index'ini doner
+
+System.out.println(Arrays.binarySearch(arr, 10)); //1
+System.out.println(Arrays.binarySearch(arr, 100)); // -6
+
+// binary search sonuc olarak aradigimiz eleman varsa indexini verir
+// aradigimiz eleman yoksa - isareti ile olsaydi kacinci eleman olacagini döndürür
+
+
+
+
+*Array i Stringe çevirme:
+
+int arr[]= {10,25,3,16,75};
+
+String arrayString = Arrays.toString(arr);// array i stringe çevirdik
+System.out.println(arrayString); // [10,25,3,16,75] yazdırdık
+
+System.out.println(arrayString.substring(5)); String olunca substring, bütün karakterleri sayarak kuralını uygular ve [ parantezi bile sayarak, 5. Elemanla beraber sonrasını yazdırır..5,3,16,75]
+
+
+
+
+*String i array e çevirme:  split() methodu
+
+String str="Herkes Javayi tanisa severdi";
+
+String arr[]=str.split(" "); // array e çevirdik ve split metoduyla boşluklardan virgülle ayırdık      (split metodu:istenilen karakteri siler virgül ve boşluk koyar)
+
+
+System.out.println(Arrays.toString(arr));//[Herkes, Javayi, tanisa, severdi]
+
+
+String arr2[]=str.split("Java");// Javadan virgülle ayır
+System.out.println(Arrays.toString(arr2)); //[Herkes , yi tanisa severdi]
+
+
+
+
+*İki array in eşitliğini kontrol etme:
+
+int arr1[]= {10,25,5,20};
+int arr2[]= {25,10,20,5};
+
+System.out.println(Arrays.equals(arr1, arr2)); //false çıkar
+
+eğer bu array leri sıralarsak;
+
+Arrays.sort(arr1);  // [5, 10, 20, 25]
+Arrays.sort(arr2);  // [5, 10, 20, 25]
+
+System.out.println(Arrays.equals(arr1, arr2));//true
+
+Yani iki array in eşit olabilmesi için aynı indexlerdeki sayıların eşit olması gerekir.
+
+
+
+*bir elemanın Array içindeki varlığını kontrol etme: binarySearch() methodu
+
+Method: Arrays.binarySearch(array ismi, aradığımız eleman)
+
+int arr3[] = {1,2,3,4,5,6};
+System.out.println(Arrays.binarySearch(arr3, 2));
+    • Dikkat! Direk syso nun içine yazdım.
+
+    1. Bu yöntem aradığımız elemanın index ini verir.
+    2. Onemli Not: binarySearch() methodunu kullanmadan önce sort() methodunu  zorundasiniz. Aksi takdirde; binarySearch() methodu manali bir sonuc vermez.
+    3. Olmayan bir eleman sorgulatırsak negatif sayilar return eder.negatif olmasi o elemanin arrayde olmadigi anlamina gelir.
+ Sayi kismi ise o eleman var olsaydi kacinci eleman olurdu anlamindadir.
+
+
+
+
+
+*Multidimensional array:
+
+int arr[][] = {{1,3,5},{3,5},{5,9,11,3}}; // iki katli bir array’dir
+
+//11'i index ile ifade etmek istersek arr[2][2]
+
+// eger Array’i uzunlukla declare etmek istersek inner array uzunluklari esit olmali
+
+int arr2[][] = new int [3][2]; int arr[3][2]={{1,2},{3,4},{5,6}} gibi..
+// [3] ilk yazilan sayi outer array’in icinde kac tane inner array oldugunu belirtir
+// [2] her bir inner array’in uzunluğunu belirtir.
+
+Soldaki en dış parantezden geçince sıradaki parantezin tamamı ilk outer array, bu parantezin içindeki iki eleman ilk inner arrayler.
+
+
+
+
+*Multidimensional Array i yazdırma:
+
+System.out.println(Arrays.deepToString(arr2));
+
+
+
+
+===============Arraylist =======================
+
+*Arraylist oluşturma
+1. yol
+ArrayList<String> list2 =new ArrayList<>();
+
+ 2. yol En cok bu kullanilir
+List<String> list3 = new ArrayList<>();
+
+// NOT : eger constructor olarak List<>() kullanilirsa CTE verir
+// List<>() constructor olarak kullanilamaz
+// List<String> list4 = new List<>();
+// Olusturdugumuz Class isimleri Java'da kullanilan obje isimleri ile AYNI OLMAMALIDIR
+
+
+
+*List e eleman ekleme: add() methodu
+
+List olustururken otomatik olarak eleman ekleme ozelligi yoktur,
+elemanlarin tek tek eklenmesi gerekir.
+
+list3.add("Ali");
+list3.add("Veli");
+list3.add("Ayse");  // bu yöntemde list'in en sonuna ekler
+list3.add(1,"hasan");  // bu yöntemde ise 1. indexe hasan ekler
+
+
+
+
+* List nasil yazdirilir
+
+System.out.println(list3); // [Ali, Veli, Ayse]
+
+list3.add(1, "Can"); // 1.index'e istenen degeri ekler
+
+System.out.println(list3); // [Ali, Can, Veli, Ayse]
+
+list3.add(1, "Fatma"); //
+
+System.out.println(list3); // [Ali, Fatma, Can, Veli, Ayse]
+
+
+
+
+*List in uzunluğunu bulma: size() methodu
+
+System.out.println(list.size()); // [Ali, Fatma, Can, Veli, Ayse] için 5
+
+
+
+
+*List ten eleman silme: remove() methodu
+
+List in elemanları [10, 15, 8, 12, 20] olsun.
+
+
+list.remove(1); // [10, 8, 12, 20]….1. indexli 15 i sildi
+
+System.out.println(list.remove(2)); //  git 12'yi kaldir dedik, bize 12'yi döndürür
+// remove(index) kullanidigimizda o indexdeki elemani remove eder
+// ve bunun delili olarak bize o elemani getirir
+// eger olmayan bir index girersek RTE verir
+System.out.println(list); // bu şekilde de yeni list yazdırılır [10, 8, 20]
+
+
+
+
+====string olarak remove edersek===
+
+list.add("Ali");
+List.add(“Osman”);
+
+System.out.println(list.remove("Hasan")); // git hasan'i kaldir dedik bulamadigi icin false dondurur
+
+System.out.println(list); //[Ali, Osman]
+System.out.println(list.remove(“Ali”)); //true
+System.out.println(list);// [Osman]
+
+System.out.println(list.remove(0)); yazarsak 0. İndex i siler.
+
+// remove(Object) method'u kullanildiginda eger Java istenen elemani bulup remove ederse bize true dondurur, listede bulamazsa istegin yerine getirilemedigini anlamamiz icin false dondurur
+
+
+
+*İstenen indexdeki elemani kaldirip, yerine bizim istedigimiz elemani koyma(replace) : set(index, degisecekelement) methodu
+
+List [Ali, Can, Osman, Fatma] olsun
+
+list.set(2, "Kemal"); //2. İndexteki Osman ı kaldır Kemal i koy
+System.out.println(list); // [Ali, Can, Kemal, Fatma]
+
+// list.set(4, "Mustafa"); olmayan bir index kullanilirsa RTE verir
+
+
+
+
+* List te eleman var mı yok mu kontrol etme: contains() methodu
+
+List [Ali, Can, Osman, Fatma] olsun
+
+System.out.println(list.contains("Ali")); // true
+System.out.println(list.contains("Mehmet")); // false
+
+list.contains("Cemal"); // bize boolean bir sonuc verir, liste degismez
+
+
+
+*List in elemanlarını sıralama: Collections.sort(list adı);
+
+
+Collections.sort(list);
+
+System.out.println(list); // [Ali, Can, Fatma, Osman ]
+
+
+
+*İki List in eşitliğine bakma: equals() methodu
+
+ İki list oluşturalım
+List<Integer> list1 = new ArrayList<>();
+list1.add(10);
+list1.add(20);
+
+List<Integer> list2 = new ArrayList<>();
+list2.add(20);
+list2.add(10);
+
+// equals() methodu 2 listeyi hem elemanlar hemn de elemanlarin index'leri ile karsilastirir
+// hem elemanlar hem de indexler esit ise true doner, yoksa false doner
+System.out.println(list1.equals(list2)); // false
+
+List leri sıralarsak
+Collections.sort(list1); // [10,20]
+Collections.sort(list2); // [10,20]
+System.out.println(list1.equals(list2)); // true
+
+
+
+*List in bütün elemanlarını silme: clear() methodu adi ustunde temizlik yapar tum elemanlari siler.
+
+List [Ali, Can, Osman, Fatma] olsun
+
+list.clear();
+
+System.out.println(list1); // []
+
+
+
+*List te elemanı al gel : get() methodu ise List te istenen index teki elemanlari getirir.
+
+List [Ali, Can, Osman, Fatma] olsun
+
+System.out.println(list.get(2));  //Osman yazdırır
+
+System.out.println(list);  //[Ali, Can, Osman, Fatma] kimseyi silmez
+
+
+
+*isEmpty methodu ise List in ici bos ise tru dolu ise false olarak dondurmeye yarar.
+
+// 9)isEmpty() methodu kullanarak, list deki tum elemanlarin silindigini  dogrulayiniz
+
+		System.out.println(list1.isEmpty()); // true
+
+
+*Array i List e çevirme:
+
+     String arr[]= {"Ali","Veli"};
+
+     List<String> listArr = Arrays.asList(arr);
+
+     System.out.println(listArr); // [Ali, Veli]
+
+
+  Bazen cok fazla elemani olan bir liste olusturmamiz gerekir. Bu durumda liste elemanlarini tek tek eklemek yerine elemanlari bir Array'e ekler, sonra da array'i list'e cevirebiliriz
+
+  Ancak bu method'la array'den cevirdigimiz list esnek olmaz
+ (array'in ozelliklerini tasir) add(), remove(),clear() gibi uzunlugu etkileyen methodlar kullanılamaz
+
+  Java bu degisimdeki Array ve List'i senkronize eder, birinde yaptigimiz degisiklik otomatik olarak digerini de update eder, birinde yaptigimiz degisiklik digerine de islenir
+
+  arr[1]=”Osman”; //array in index 1 ini Osman yap
+
+  System.out.println(Arrays.toString(arr));// array=[Ali, Osman] olur
+  System.out.println("list2 : " + list2);// list=[Ali, Osman] olur
+
+
+  list.set(0, “Veli”); //list in 0. İndex ini Veli ile değiştirir
+
+  System.out.println(list2);// list=[Veli, Osman]
+  System.out.println(Arrays.toString(arr1)); //array= [Veli, Osman]
+
+
+
+*List i Array e çevirme:
+
+ Önce bir List oluşturalım
+List<String> list=new ArrayList<>();
+list.add("Ali");
+list.add("Veli");
+
+Array e çevirelim
+String arr[]= list.toArray(new String[0]);
+
+Yazdıralım
+System.out.println(Arrays.toString(arr)); //[Ali, Veli]
+
+
+
